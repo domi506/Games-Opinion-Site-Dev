@@ -1,7 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-
+import Opiniones from '@/views/Opiniones.vue'
+import Admin from '@/views/Admin.vue'
+import Edit from '@/views/Edit.vue'
+import NotFound from '@/views/NotFound.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -9,6 +12,27 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '*',
+    name: 'NotFound',
+    component: NotFound
+  },
+  {
+    path: '/Opiniones',
+    name: 'Opiniones',
+    component: Opiniones
+  },
+  {
+    path: '/Edit/:index',
+    name: 'Edit',
+    component: Edit,
+    props:true
+  },
+  {
+    path: '/Admin',
+    name: 'Admin',
+    component: Admin
   },
   {
     path: '/about',
